@@ -30,6 +30,15 @@
                     <i class="fas fa-address-card"></i>
                 </h4>
                 <ContactCard :contact="activeContact" />
+                <router-link :to="{
+                    name: 'contact.edit',
+                    params: { id: activeContact._id },
+                }">
+                    <p class="badge bg-warning mt-3">
+                        <i class="fas fa-edit"></i> Hiệu chỉnh
+                    </p>
+
+                </router-link>
             </div>
         </div>
     </div>
@@ -40,6 +49,7 @@ import InputSearch from '@/components/InputSearch.vue';
 import ContactService from '@/services/contact.service';
 import ContactCard from '@/components/ContactCard.vue';
 import ContactList from '@/components/ContactList.vue';
+
 
 export default {
     components: {
